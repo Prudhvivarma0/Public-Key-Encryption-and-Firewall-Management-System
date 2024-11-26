@@ -7,11 +7,7 @@
   - [Public-Key Encryption System](#public-key-encryption-system)
   - [Firewall Rule Management](#firewall-rule-management)
 - [Installation](#installation)
-- [Usage](#usage)
-  - [Task 1: Public-Key Encryption](#task-1-public-key-encryption)
-  - [Task 2: Firewall Management](#task-2-firewall-management)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
