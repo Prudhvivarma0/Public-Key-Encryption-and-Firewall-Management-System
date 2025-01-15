@@ -44,6 +44,7 @@ This repository contains two main components:
    cd <repository-folder>
 
  2.	Install Python 3 and necessary packages:
+    ```bash
     pip install -r requirements.txt
 
 
@@ -52,7 +53,9 @@ Usage
 1. Public-Key Encryption
 
 To run the encryption program:
+```bash
 python Task1-Encryption.py
+```
 
 Available options:
 	•	generate: Generate public and private keys.
@@ -60,16 +63,17 @@ Available options:
 	•	decrypt: Decrypt a file using the private key.
 
 Example Commands:
-
+```bash
 Choose action (generate/encrypt/decrypt): generate
 Choose e(n) (between 2 and 64): 5
-
+```
 
 2. Firewall System
 
 To run the firewall program:
+```bash
 python firewall2.py
-
+```
 
 Available commands:
 	•	add: Add a rule (e.g., add 1 -in 192.168.1.10).
@@ -93,20 +97,14 @@ Planning is key to achieving goals.
 
 Firewall Example
 
+```bash
 Enter command: add 1 -in 192.168.1.15
 Enter command: list
 Rule 1 | Direction: -in | Address: 192.168.1.15
 Enter command: save
 Enter filename to save rules to: rules.txt
+```
 
-Testing
-
-Sample test cases are included for:
-	•	Encryption/Decryption with different key lengths.
-	•	Adding, removing, and listing firewall rules.
-
-To run tests:
-pytest test_firewall.py
 
 Contributing
 
