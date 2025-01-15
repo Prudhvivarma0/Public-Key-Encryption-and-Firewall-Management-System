@@ -109,8 +109,13 @@ Enter filename to save rules to: rules.txt
 Contributing
 
 Contributions are welcome! Please follow these steps:
+
 	1.	Fork the repository.
+ 
 	2.	Create a new branch: git checkout -b feature-name.
+ 
 	3.	Commit changes: git commit -m "Add feature".
+ 
 	4.	Push to your branch: git push origin feature-name.
+ 
 	5.	Create a pull request.
