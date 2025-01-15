@@ -48,7 +48,7 @@ This repository contains two main components:
     pip install -r requirements.txt
 
 
-Usage
+## **Usage
 
 1. Public-Key Encryption
 
@@ -82,7 +82,7 @@ Available commands:
 	•	save: Save rules to a file.
 	•	load: Load rules from a file.
 
-Example
+## **Example
 
 Public-Key Encryption Example
 
@@ -106,7 +106,7 @@ Enter filename to save rules to: rules.txt
 ```
 
 
-Contributing
+## **Contributing
 
 Contributions are welcome! Please follow these steps:
 
