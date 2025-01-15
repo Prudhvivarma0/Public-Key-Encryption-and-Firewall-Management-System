@@ -1,62 +1,118 @@
-# Public-Key Encryption and Firewall Management System
+# **Firewall and Public-Key Encryption System**
 
-## Table of Contents
+## **Project Overview**
+This repository contains two main components:
 
-- [Overview](#overview)
-- [Project Features](#project-features)
-  - [Public-Key Encryption System](#public-key-encryption-system)
-  - [Firewall Rule Management](#firewall-rule-management)
+1. **Public-Key Encryption System**: Implements an alternative public-key encryption method, supporting key generation, encryption, and decryption. It follows a super-increasing sequence-based approach for key generation.
+2. **Firewall System**: Implements a rule-based firewall that allows adding, listing, and removing IP-based access control rules. It supports single IPs, ranges, and bidirectional rules.
+
+---
+
+## **Table of Contents**
+- [Features](#features)
 - [Installation](#installation)
+- [Usage](#usage)
+  - [Public-Key Encryption](#public-key-encryption)
+  - [Firewall System](#firewall-system)
+- [Example](#example)
+- [Testing](#testing)
 - [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## Overview
+## **Features**
 
-This project implements two key functionalities:
+### **Public-Key Encryption System**
+- Supports key generation with lengths ranging from 2 to 64.
+- Encrypts plaintext by converting it to binary and splitting into chunks.
+- Decrypts ciphertext using private keys and reconstructs the original text.
+- Handles modular arithmetic and prime number operations.
 
-1. A custom public-key encryption system based on a novel method of key generation and encryption.
-2. A firewall rule management application to control access to a network based on IPv4 packet filtering rules.
-
-The goal is to demonstrate practical applications of cryptographic methods and firewall systems using Python.
-
----
-
-## Project Features
-
-### Public-Key Encryption System
-
-- **Key Generation:** Generate public and private keys based on custom rules.
-- **Encryption:** Encrypt plaintext messages into ciphertext using the public key.
-- **Decryption:** Decrypt ciphertext into plaintext using the private key.
-- **Security Assumptions:** The encryption relies on modular arithmetic and the mathematical properties of keys.
-
-### Firewall Rule Management
-
-- **Add Rules:** Dynamically add IPv4-based rules for incoming and outgoing packets.
-- **Remove Rules:** Delete specific rules or specific traffic directions.
-- **List Rules:** Display all rules with filtering options based on IP address, range, or direction.
-- **Command-Line Interface:** Simple command-line commands for managing rules.
+### **Firewall System**
+- Supports rule addition for single IPs, ranges, and bidirectional rules.
+- Allows listing of rules based on filters (rule number, direction, IP address).
+- Can save and load rules to/from files.
+- Handles duplicate rules and ensures priority adjustments.
 
 ---
 
-## Installation
-
+## **Installation**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/encryption-firewall-management.git
-   ```
+   git clone <repository-url>
+   cd <repository-folder>
 
-## Navigate to the Project Directory
+ 2.	Install Python 3 and necessary packages:
+    pip install -r requirements.txt
 
-```bash
-cd encryption-firewall-management
-```
 
-## Install the Necessary Python Dependencies
-```bash
-pip install -r requirements.txt
-```
+Usage
 
-## Contributing
-Contributions are welcome! Please fork this repository and submit a pull request with any enhancements, bug fixes, or additional features.
+1. Public-Key Encryption
+
+To run the encryption program:
+python Task1-Encryption.py
+
+Available options:
+	•	generate: Generate public and private keys.
+	•	encrypt: Encrypt a text file using the public key.
+	•	decrypt: Decrypt a file using the private key.
+
+Example Commands:
+
+Choose action (generate/encrypt/decrypt): generate
+Choose e(n) (between 2 and 64): 5
+
+
+2. Firewall System
+
+To run the firewall program:
+python firewall2.py
+
+
+Available commands:
+	•	add: Add a rule (e.g., add 1 -in 192.168.1.10).
+	•	remove: Remove a rule (e.g., remove 1 -in).
+	•	list: List all rules or filter by direction, address, etc.
+	•	save: Save rules to a file.
+	•	load: Load rules from a file.
+
+Example
+
+Public-Key Encryption Example
+
+Plaintext:
+Planning is key to achieving goals.
+
+Key Length: 5
+Encrypted Ciphertext: [60, 313, 500, ...]
+
+Decrypted Output:
+Planning is key to achieving goals.
+
+Firewall Example
+
+Enter command: add 1 -in 192.168.1.15
+Enter command: list
+Rule 1 | Direction: -in | Address: 192.168.1.15
+Enter command: save
+Enter filename to save rules to: rules.txt
+
+Testing
+
+Sample test cases are included for:
+	•	Encryption/Decryption with different key lengths.
+	•	Adding, removing, and listing firewall rules.
+
+To run tests:
+pytest test_firewall.py
+
+Contributing
+
+Contributions are welcome! Please follow these steps:
+	1.	Fork the repository.
+	2.	Create a new branch: git checkout -b feature-name.
+	3.	Commit changes: git commit -m "Add feature".
+	4.	Push to your branch: git push origin feature-name.
+	5.	Create a pull request.
